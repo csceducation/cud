@@ -95,7 +95,7 @@ WSGI_APPLICATION = "csc_app.wsgi.application"
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'vdmdb',
+		'NAME': 'cuddb',
 		'USER': 'cscadmin',
 		'PASSWORD': 'cscadmin@123',
 		'HOST':'localhost',
