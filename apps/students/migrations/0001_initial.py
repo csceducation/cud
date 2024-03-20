@@ -188,7 +188,7 @@ class Migration(migrations.Migration):
                 (
                     "passport",
                     models.ImageField(
-                        blank=False,
+                        blank=True,
                         upload_to="students/passports/",
                         verbose_name="Photo",
                     ),

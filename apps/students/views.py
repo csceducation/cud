@@ -36,6 +36,8 @@ from django.utils.decorators import method_decorator
 from apps.corecode.views import student_entry_resricted,staff_student_entry_restricted,different_user_restricted
 from django.contrib.auth.decorators import login_required
 
+
+
 def generate_student_id_card(request,student_id):
         # Create a blank image
     image = Image.new('RGB', (1000, 900), (255, 255, 255))
@@ -205,9 +207,14 @@ class StudentCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
                     super().__init__(*args, **kwargs)
                     # Make the 'enquiry_id' field readonly
                     
+                    
+                                
 
 
         form = StudentForm()
+        for field_name, field in form.fields.items():
+                        if field.required:
+                            form.fields[field_name].label = f"{field.label} *"
         form.initial['if_enq'] = enquiry_id
         form.fields['if_enq'].widget = forms.HiddenInput()
         form.fields['if_enq'].label = ""

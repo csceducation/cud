@@ -56,6 +56,7 @@ def login_url(request, username, password:str):
             return redirect("accounts/login")
     else:
         return HttpResponse("Invalid username or password")
+
 def entry_restricted(request,*args,**kwargs):
     return render(request=request,template_name='corecode/entry_restricted.html',)
 

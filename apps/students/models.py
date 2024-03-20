@@ -83,12 +83,13 @@ class Student(models.Model):
     address2 = models.CharField("Address Line 3", max_length=255,default=None,blank=True,null=True)
     taluka = models.CharField("Taluk",max_length=255,default=None,blank=True,null=True)
     district = models.CharField("District",max_length=255,default=None,blank=True,null=True)
-    pincode = models.IntegerField("Pincode", blank=True, default=None)
+    pincode = models.IntegerField("Pincode", blank=True, default=None, null=True)
 
     #course
     date_of_admission = models.DateField(default=timezone.now)
     course = models.ForeignKey(CourseModel,on_delete=models.PROTECT)
     class_time = models.ManyToManyField(Time,verbose_name="Class Timing",blank=True)
+
      
 
     #fees
